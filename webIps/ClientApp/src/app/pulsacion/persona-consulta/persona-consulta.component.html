@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-12">
-        <h1>Consultar personas</h1>
+        <h1>Consultar paciente</h1>
         <p>persona-consulta works!</p>
         <input [(ngModel)]="searchText" type="text" class="form-control" placeholder="Buscar...">
         <hr>
     </div>
-    <div class="col-md-12" *ngIf="personas && personas.length">
+    <div class="col-md-12" *ngIf="pacientes && pacientes.length">
         <div class="card">
           <!--<div class="card-header">
             <h4 class="card-title"> Simple Table</h4>
@@ -14,21 +14,21 @@
             <div class="table-responsive">
               <table class="table">
                 <thead class=" text-primary">
-                    <th class="text-right">#</th>
-                    <th class="text-right">identificación</th>
-                    <th>Nombre </th>
-                    <th class="text-center">sexo</th>
-                    <th class="text-right">Edad</th>
-                    <th class="text-right">Pulsacion</th>
+                    <th>#</th>
+                    <th>Identificación</th>
+                    <th>Nombre </th>
+                    <th>Valor Servicio</th>
+                    <th>Salario</th>
+                    <th>Copago</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let persona of personas; index as i ">
-                        <th class="text-right">{{ i + 1 }}</th>
-                        <td class="text-right">{{ persona.identificacion }} </td>
-                        <td>{{ persona.nombre }}</td>
-                        <td class="text-center">{{ persona.sexo }}</td>
-                        <td class="text-right">{{ persona.edad }}</td>
-                        <td class="text-right">{{ persona.pulsacion }}</td>
+                    <tr *ngFor="let paciente of pacientes; index as i ">
+                        <th>{{ i + 1 }}</th>
+                        <td>{{ paciente.identificacion }} </td>
+                        <td>{{ paciente.nombre }}</td>
+                        <td>{{ paciente.valorServicio  }}</td>
+                        <td>{{ paciente.salario }}</td>
+                        <td>{{ paciente.copago  }}</td>
                     </tr>
                 </tbody>                    
               </table>

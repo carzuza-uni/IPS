@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from '../models/persona';
 import { PersonaService } from '../../services/persona.service';
+import { Paciente } from '../models/paciente';
+import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-persona-registro',
@@ -9,6 +11,7 @@ import { PersonaService } from '../../services/persona.service';
 })
 export class PersonaRegistroComponent implements OnInit {
   persona: Persona;
+  paciente: Paciente;
 
   //validacion
   enviarDatos = false;
@@ -16,13 +19,23 @@ export class PersonaRegistroComponent implements OnInit {
   errorNombre = false;
   errorEdad = false;
   errorSexo = false;
-  constructor(private personaService: PersonaService) { }
+  
+  constructor(private personaService: PersonaService, private pacienteService: PacienteService) { }
 
   ngOnInit() {
+    this.paciente = new Paciente();
     this.persona = new Persona;
   }
 
-  add(){    
+  add(){
+    this.pacienteService.post(this.paciente).subscribe(p => {
+      if (!p) {
+        alert('Paciente yaaa!');
+      }
+    });
+  }
+
+  add1(){    
     //$('#mensaje').addClass("hide");
     this.errorIdentificacion = false;
     this.errorNombre = false;

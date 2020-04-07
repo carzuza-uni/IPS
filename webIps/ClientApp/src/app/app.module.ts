@@ -13,6 +13,7 @@ import { PersonaConsultaComponent } from './Pulsacion/persona-consulta/persona-c
 import { PersonaRegistroComponent } from './Pulsacion/persona-registro/persona-registro.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonaService } from './services/persona.service';
+import { PacienteService } from './services/paciente.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { PersonaService } from './services/persona.service';
     ]),
     AppRoutingModule
   ],
-  providers: [PersonaService],
+  providers: [PersonaService, PacienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
