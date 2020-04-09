@@ -1,3 +1,5 @@
+using Entity;
+
 namespace webIps.Models
 {
     public class PacienteInputModel

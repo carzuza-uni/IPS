@@ -30,7 +30,12 @@ export class PersonaRegistroComponent implements OnInit {
   add(){
     this.pacienteService.post(this.paciente).subscribe(p => {
       if (!p) {
-        alert('Paciente yaaa!');
+        this.paciente.identificacion = '';
+        this.paciente.nombre = '';
+        this.paciente.valorServicio = null;
+        this.paciente.salario = null;
+        this.paciente.copago = null;
+        alert('Registro realizado con exito!');
       }
     });
   }
